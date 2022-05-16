@@ -1,1 +1,1 @@
-# NewlecSpring
+Newlecture - SpringFramework/Boot (Maven)
