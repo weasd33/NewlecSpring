@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Exam exam = new NewlecExam(); -->
+	<bean id="exam" class="spring.di.entity.NewlecExam" />
+	<!-- ExamConsole console = new GridExamConsole(); -->
+	<bean id="console" class="spring.di.ui.GridExamConsole" >
+		<!-- console.setExam(exam); -->
+		<!-- 여기서 exam은 setExam이다. 묵시적으로 set은 지우고 맨 앞글자는 소문자로 변경 -->
+		<!-- exam에 설정할 id(spring.di.entity.NewlecExam)를 타입에 맞게 value나 ref에 넣어줌-->
+		<property name="exam" ref="exam" />
+	</bean>
+	
+</beans>
