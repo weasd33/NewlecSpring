@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- Exam exam = new NewlecExam(); -->
-	<bean id="exam" class="spring.di.entity.NewlecExam">
+		
+	<!-- <bean id="exam" class="spring.di.entity.NewlecExam">	
+		set 주입
 		<property name="kor">
 			<value>10</value>
 		</property>
 		<property name="eng" value="10" />
 		<property name="math" value="10" />
 		<property name="com" value="10" />
-	</bean>
+		
+		생성자 주입시 value만 적을 경우 인자 생성자의 순서대로 값이 들어간다.
+		이렇게 되면 순서가 정확하지 않을 경우 버그를 유발할 수 있다.
+		따라서 index로 지정하거나 name으로 명시적으로 넣어줄 수 있다.
+		또한 만약 생성자가 오버로드일 경우 타입을 알아야 하므로 type까지 지정해주면 좋다.
+		<constructor-arg index="0" value="10" />
+		<constructor-arg name="eng" type="int" value="20" />
+		<constructor-arg index="2" value="30" />
+		<constructor-arg name="com" value="40" />
+	</bean> -->
+	
+	<!-- 위 방법은 코드가 난잡하기에 해당 방식 적용 -->
+	<bean id="exam" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10"/>
+	
 	<!-- ExamConsole console = new GridExamConsole(); -->
 	<bean id="console" class="spring.di.ui.InlineExamConsole" >
 		<!-- console.setExam(exam); -->
