@@ -3,8 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<context:annotation-config />
 	<!-- Exam exam = new NewlecExam(); -->
 		
 	<!-- <bean id="exam" class="spring.di.entity.NewlecExam">	
@@ -34,7 +38,7 @@
 		<!-- console.setExam(exam); -->
 		<!-- 여기서 exam은 setExam이다. 묵시적으로 set은 지우고 맨 앞글자는 소문자로 변경 -->
 		<!-- exam에 설정할 id(spring.di.entity.NewlecExam)를 타입에 맞게 value나 ref에 넣어줌-->
-		<property name="exam" ref="exam" />
+		<!-- <property name="exam" ref="exam" /> -->
 	</bean>
 	
 	<util:list id="exams" list-class="java.util.ArrayList">
