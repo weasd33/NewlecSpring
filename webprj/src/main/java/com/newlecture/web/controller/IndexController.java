@@ -12,9 +12,9 @@ public class IndexController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		System.out.println("index controller");
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("data", "Hello Spring MVC");
-		mv.setViewName("/WEB-INF/view/index.jsp");
+		//mv.setViewName("/WEB-INF/view/index.jsp");
 		
 		return mv;
 	}
