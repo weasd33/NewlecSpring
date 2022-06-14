@@ -17,8 +17,10 @@ public class NoticeController { // <bean name="adminNoticeController" class="com
 
 	@RequestMapping("reg")
 	@ResponseBody
-	public String reg(String title, String content, String category) {
-
+	public String reg(String title, String content, String category, String[] foods, String food) {
+		System.out.println(category);
+		for(String f : foods)
+			System.out.println(f);
 		return String.format("title:%s<br>content:%s<br>category:%s<br>", title, content, category);
 	}
 
